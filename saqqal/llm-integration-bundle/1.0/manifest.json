@@ -1,0 +1,39 @@
+{
+    "manifests": {
+      "saqqal/llm-integration-bundle": {
+        "manifest": {
+          "bundles": {
+            "Saqqal\\LlmIntegrationBundle\\LlmIntegrationBundle": ["all"]
+          },
+          "copy-from-recipe": {
+            "config/": "%CONFIG_DIR%/"
+          },
+          "env": {
+            "LLM_PROVIDER": "api_together",
+            "LLM_PROVIDER_API_KEY": "your_api_key_here",
+            "LLM_MODEL": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+          },
+          "post-install-output": [
+            "* Your LLM Integration is almost ready:",
+            " 1. Set your LLM_PROVIDER_API_KEY in the .env file",
+            " 2. Configure your desired provider and model in config/packages/llm_integration.yaml",
+            "",
+            "* Read the documentation at <comment>https://github.com/abdosql/llm-integration-bundle</>"
+          ]
+        },
+        "files": {
+          "config/packages/llm_integration.yaml": {
+            "contents": [
+              "llm_integration:",
+              "    provider: '%env(string:default:api_together:LLM_PROVIDER)%'",
+              "    api_key: '%env(LLM_PROVIDER_API_KEY)%'",
+              "    model: '%env(default:meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo:LLM_MODEL)%'",
+              ""
+            ],
+            "executable": false
+          }
+        },
+        "ref": "cc392d404a45a659e9616f640dda2cd64063bcec"
+      }
+    }
+  }
