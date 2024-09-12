@@ -3,7 +3,7 @@
         "Saqqal\\LlmIntegrationBundle\\LlmIntegrationBundle": ["all"]
     },
     "copy-from-recipe": {
-        "config/packages/llm_integration.yaml": "%CONFIG_DIR%/packages/llm_integration.yaml"
+        "config/packages/": "%CONFIG_DIR%"
     },
     "env": {
         "LLM_INTEGRATION_API_KEY": "your_api_key_here",
