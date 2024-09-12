@@ -1,0 +1,13 @@
+{
+    "bundles": {
+        "Saqqal\\LlmIntegrationBundle\\LlmIntegrationBundle": ["all"]
+    },
+    "copy-from-package": {
+        "config/packages/llm_integration.yaml": "%CONFIG_DIR%/packages/llm_integration.yaml"
+    },
+    "env": {
+        "LLM_INTEGRATION_API_KEY": "your_api_key_here",
+        "LLM_PROVIDER": "api_together",
+        "LLM_MODEL": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+    }
+}
