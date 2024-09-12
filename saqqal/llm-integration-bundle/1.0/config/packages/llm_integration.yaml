@@ -1,4 +1,4 @@
 llm_integration:
     provider: '%env(string:default:api_together:LLM_PROVIDER)%'
-    api_key: '%env(LLM_PROVIDER_API_KEY)%'
+    api_key: '%env(LLM_INTEGRATION_API_KEY)%'
     model: '%env(default:meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo:LLM_MODEL)%'
