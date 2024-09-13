@@ -1,7 +1,8 @@
 {
     "recipes": {
         "saqqal/llm-integration-bundle": [
-            "1.0"
+            "1.0",
+            "dev-develop"
         ]
     }
 }
