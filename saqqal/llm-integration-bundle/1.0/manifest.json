@@ -10,8 +10,17 @@
         "LLM_INTEGRATION_API_KEY": "",
         "LLM_MODEL": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
     },
-    "composer-scripts": {
-        "cache:clear": "symfony-cmd",
-        "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    "files": {
+        "config/packages/llm_integration.yaml": {
+            "contents": [
+                "llm_integration:",
+                "    provider: '%env(string:default:api_together:LLM_PROVIDER)%'",
+                "    api_key: '%env(LLM_INTEGRATION_API_KEY)%'",
+                "    model: '%env(default:meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo:LLM_MODEL)%'",
+                ""
+            ],
+            "executable": false
+        }
     }
+    
 }
