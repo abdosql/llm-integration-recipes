@@ -1,0 +1,17 @@
+{
+    "bundles": {
+        "Saqqal\\LlmIntegrationBundle\\LlmIntegrationBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "LLM_PROVIDER": "api_together",
+        "LLM_INTEGRATION_API_KEY": "",
+        "LLM_MODEL": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+    },
+    "composer-scripts": {
+        "cache:clear": "symfony-cmd",
+        "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    }
+}
