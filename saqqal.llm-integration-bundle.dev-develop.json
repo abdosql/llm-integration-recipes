@@ -1,0 +1,31 @@
+{
+    "manifests": {
+      "saqqal/llm-integration-bundle": {
+        "manifest": {
+          "copy-from-recipe": {
+            "config/": "%CONFIG_DIR%/"
+          },
+          "post-install-output": [
+            "  * Your LLM integration is almost ready:",
+            "    1. Set up your environment variables for LLM_PROVIDER, LLM_INTEGRATION_API_KEY, and LLM_MODEL.",
+            "    2. Adjust the configuration in llm_integration.yaml according to your needs.",
+            "  * Don't forget to check the documentation for further customization and API setup."
+          ]
+        },
+        "files": {
+          "config/packages/llm_integration.yaml": {
+            "contents": [
+              "llm_integration:",
+              "    provider: '%env(string:default:api_together:LLM_PROVIDER)%'",
+              "    api_key: '%env(LLM_INTEGRATION_API_KEY)%'",
+              "    model: '%env(default:meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo:LLM_MODEL)%'",
+              ""
+            ],
+            "executable": false
+          }
+        },
+        "ref": "aea5f81d9fe7f9f3a07f967ebfa2b5283f7364bd"
+      }
+    }
+  }
+  
